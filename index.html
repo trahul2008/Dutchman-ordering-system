@@ -1,28 +1,76 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
+    <!-- META TAGS -->
     <meta charset="UTF-8">
-    <title>Database Base Document</title>
-    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-
-    <script type="text/javascript" src="Beverages.js"></script>
-    <script type="text/javascript" src="DBLoaded.js"></script>
-    <script type="text/javascript" src="loader.js"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Order System</title>
+    
+    <!-- EXTERNAL RESOURCES -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="module" src="js/loader.js"></script> <!-- 添加 type="module" -->
 </head>
 
 <body>
+    <!-- WELCOME HEADER -->
+    <header id="welcomeBar">
+        <span class="welcome-text">🍻 Welcome to SmartBar</span>
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="sv">Svenska</option>
+        </select>
+    </header>
 
-<!---
+    <!-- MAIN MENU SECTION -->
+    <section id="menu" class="draggable">
+        <h2>🍺 Drink Menu</h2>
+        <div id="menuItems"></div> <!-- Dynamic content loaded from JSON -->
+    </section>
 
-The html-file is just for loading the javascript files. If you go to the console under the "Inspect" of the popup menu,
-then you can enter javascript calls, to test the functions.
+    <!-- ORDER SECTION -->
+    <section id="orderBox" class="draggable">
+        <h2>📝 Current Order</h2>
+        <div id="orderItems"></div> <!-- Dynamic order items -->
+        <hr>
+        <p>Total: $<span id="totalAmount">0.00</span></p>
+        
+        <!-- ORDER ACTIONS -->
+        <div id="orderActions">
+            <button id="submitOrderBtn">🚀 Submit Order</button>
+            <button id="useBalanceBtn">💰 Use Balance</button>
+        </div>
+    </section>
 
--->
+    <!-- USER PANEL -->
+    <aside id="userPanel">
+        <div class="login-form">
+            <h3>🔑 VIP Login</h3>
+            <div class="input-group">
+                <input type="text" id="username" class="login-input" placeholder="Username">
+                <input type="password" id="password" class="login-input" placeholder="Password">
+            </div>
+            <div class="button-group">
+                <button id="registerBtn" class="btn-register">Register</button>
+                <button id="loginBtn">Login</button>
+            </div>
+        </div>
 
+        <!-- USER INFO (Visible after login) -->
+        <div class="user-info">
+            <h3>👋 <span id="displayName"></span></h3>
+            <p>💰 Balance: $<span id="displayBalance">0.00</span></p>
+            
+            <!-- VIP ACTIONS -->
+            <div class="vip-actions">
+                <button id="addFundsBtn">💳 Add Funds</button>
+                <div class="compact-buttons">
+                    <button id="specialDrinkBtn" aria-label="Special drink">🍸 Special drink</button>
+                    <button id="logoutBtn" class="btn-logout" aria-label="Log out">🚪 Log out</button>
+                </div>
+            </div>
+        </div>
+    </aside>
 </body>
-
 </html>
-

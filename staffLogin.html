@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>员工登录</title>
+</head>
+<body>
+    <h1>员工登录</h1>
+
+    <input type="text" id="username" placeholder="用户名" />
+    <input type="password" id="password" placeholder="密码" />
+    <button onclick="staffLogin()">登录</button>
+
+    <h2>酒品库存信息</h2>
+    <div id="inventoryInfo"></div>
+
+    <h2>会员信息</h2>
+    <div id="memberInfo"></div>
+
+    <script src="BeerDB.js"></script>
+    <script src="ModelFunctions.js"></script>
+    <script src="loader.js"></script>
+    <script src="DBLoaded.js"></script>
+    <script src="Controller.js"></script>
+</body>
+</html>
